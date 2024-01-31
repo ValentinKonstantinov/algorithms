@@ -38,8 +38,9 @@ void hashFuncAdd(int &index, PfoneBook Book, int &size)
     {
         --size;
     };
-    File_1.close();
+    File_1.close()
 };
+
 void init()
 {
     // system("cls"); // clrscr(); – для компилятора Borland C++ 5.02
@@ -49,7 +50,7 @@ void init()
     {
         cerr << "Нельзя открыть файл!\n";
         system("pause"); // или _getch();
-        exit(1);
+        exit(1)
     }
 
     Book.Number = 1;
@@ -59,10 +60,10 @@ void init()
     for (i = 0; i < 13; ++i)
     {
         File_1.write(reinterpret_cast<const char *>(&Book), sizeof(PfoneBook));
-    }
+    };
 
     File_1.close();
-    system("pause");
+    system("pause")
 }; // или _getch();
 
 void view()
@@ -75,7 +76,7 @@ void view()
         cerr << "Нельзя открыть файл!\n";
 
         exit(1);
-    }
+    };
     while (!File_1.eof())
     {
         File_1.read(reinterpret_cast<char *>(&Book), sizeof(PfoneBook));
@@ -85,8 +86,8 @@ void view()
             cout << " name " << Book.Name;
             cout << " flag " << Book.Flag << " \n";
         }
-    }
-    File_1.close();
+    };
+    File_1.close()
 };
 
 void hashFuncGet(int &index, PfoneBook Book)
@@ -112,9 +113,8 @@ void hashFuncGet(int &index, PfoneBook Book)
     else
     {
         cout << "number not found" << endl;
-    }
-
-    File_1.close();
+    };
+    File_1.close()
 };
 
 void getNum()
@@ -127,7 +127,6 @@ void getNum()
 void changes(int &size)
 {
     int N;
-
     cout << "Number ";
     cin >> Book.Number;
     cin.sync();
@@ -147,7 +146,6 @@ void changes(int &size)
     File_1.write(reinterpret_cast<const char *>(&Book), sizeof(PfoneBook));
     cout << "num is added" << endl;
     File_1.close();
-
 }; // или _getch();
 
 void addf(int &size, int maxSize)
